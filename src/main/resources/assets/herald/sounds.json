@@ -1,0 +1,8 @@
+{
+  "event.storm_ring": {
+    "sounds": [
+      "herald:event/storm_ring"
+    ],
+    "subtitle": "herald.subtitles.event.storm_ring"
+  }
+}

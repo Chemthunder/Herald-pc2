@@ -1,0 +1,30 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Made with Blockbench",
+	"parent": "item/generated",
+	"textures": {
+		"layer0": "herald:item/strung_blade_handheld"
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [0, -90, 55],
+			"translation": [0, 7.25, -0.25],
+			"scale": [1.67, 1.67, 1]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [0, 90, -55],
+			"translation": [0, 7.25, -0.25],
+			"scale": [1.67, 1.67, 1]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, -90, 25],
+			"translation": [1.13, 3.2, 1.13],
+			"scale": [1.01, 1.01, 1]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, 90, -25],
+			"translation": [1.13, 3.2, 1.13],
+			"scale": [1.01, 1.01, 1]
+		}
+	}
+}

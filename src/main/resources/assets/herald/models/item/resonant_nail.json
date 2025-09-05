@@ -1,0 +1,12 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "herald:item/resonant_nail_hud"
+  },
+  "overrides": [
+    {
+      "predicate": { "is_held": 1.0 },
+      "model": "herald:item/resonant_nail_handheld"
+    }
+  ]
+}
