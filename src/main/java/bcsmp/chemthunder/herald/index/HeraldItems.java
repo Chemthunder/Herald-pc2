@@ -17,12 +17,6 @@ import static net.acoyt.acornlib.api.util.ItemUtils.modifyItemNameColor;
 public interface HeraldItems {
     Map<Item, Identifier> ITEMS = new LinkedHashMap<>();
 
-
-    Item GRACE = create("grace", new GraceItem(ToolMaterials.NETHERITE, new Item.Settings()
-            .maxCount(1)
-            .attributeModifiers(SwordItem.createAttributeModifiers(ToolMaterials.NETHERITE, 3, -2.3f))
-    ));
-
     Item SOLITUDE = create("solitude", new SolitudeItem(HeraldToolMaterial.SILLY, new Item.Settings()
             .maxCount(1)
             .attributeModifiers(SwordItem.createAttributeModifiers(HeraldToolMaterial.SILLY, 8, -2.7f))
