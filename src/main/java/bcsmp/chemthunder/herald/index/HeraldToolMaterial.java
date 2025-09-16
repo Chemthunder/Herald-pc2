@@ -1,5 +1,6 @@
 package bcsmp.chemthunder.herald.index;
 
+import bcsmp.chemthunder.herald.datagen.HeraldItemTagProvider;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ToolMaterial;
@@ -10,9 +11,13 @@ import net.minecraft.registry.tag.TagKey;
 
 public interface HeraldToolMaterial {
 
-    ToolMaterial SILLY = create(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 99999999, 5, 0, 0, ItemTags.BEACON_PAYMENT_ITEMS);
+    ToolMaterial SOLI = create(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 99999999, 5, 0, 0, HeraldItemTagProvider.SOLTIUDE_ITEMS);
 
-    ToolMaterial STRUNG = create(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 3050, 2, 0, 50, ItemTags.SHARP_WEAPON_ENCHANTABLE);
+    ToolMaterial CRIM = create(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 99999999, 5, 0, 0, HeraldItemTagProvider.CRIMSON_ITEMS);
+
+    ToolMaterial RESO = create(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 99999999, 5, 0, 0, HeraldItemTagProvider.NAIL_ITEMS);
+
+    ToolMaterial STRUNG = create(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 3050, 2, 0, 50, HeraldItemTagProvider.STRUNG_BLADE_ITEMS);
 
     private static ToolMaterial create(TagKey<Block> incorrectBlocksForDrops, int durability, float miningSpeed, float attackDamageBonus, int enchantmentValue, TagKey<Item> repairItems) {
 
