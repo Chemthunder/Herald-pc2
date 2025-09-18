@@ -3,44 +3,36 @@ package bcsmp.chemthunder.herald.effect;
 import bcsmp.chemthunder.herald.index.HeraldEffects;
 import bcsmp.chemthunder.herald.index.HeraldItems;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.AttributeContainer;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
-import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.particle.BlockStateParticleEffect;
-import net.minecraft.particle.ParticleEffect;
-import net.minecraft.particle.ParticleTypes;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
-public class StrainedEffect extends StatusEffect {
-    public StrainedEffect(StatusEffectCategory category, int color) {
+public class BoundEffect extends StatusEffect {
+    public BoundEffect(StatusEffectCategory category, int color) {
         super(category, color);
     }
 
     @Override
-    public boolean applyUpdateEffect(LivingEntity entity, int amplifier) {
-        World world = entity.getWorld();
-        BlockState state = entity.getBlockStateAtPos();
-        ItemStack offStack = entity.getOffHandStack();
-
-        if (entity instanceof PlayerEntity player) {
-
-                player.slowMovement(state, new Vec3d(1, 0.2, 1));
-
-        }
-        return super.applyUpdateEffect(entity, amplifier);
+    public void onRemoved(AttributeContainer attributeContainer) {
+        super.onRemoved(attributeContainer);
     }
 
     @Override
-    public void onRemoved(AttributeContainer attributeContainer) {
+    public boolean applyUpdateEffect(LivingEntity entity, int amplifier) {
+        BlockState state = entity.getBlockStateAtPos();
+
+        if (entity instanceof PlayerEntity player) {
+                player.slowMovement(state, new Vec3d(1.5, 1.5, 1.5));
 
 
-        super.onRemoved(attributeContainer);
+        }
+        return super.applyUpdateEffect(entity, amplifier);
     }
 
     public boolean canApplyUpdateEffect(int duration, int amplifier) {
@@ -48,7 +40,10 @@ public class StrainedEffect extends StatusEffect {
         return duration % i == 0;
     }
 
-    public ParticleEffect createParticle(StatusEffectInstance effect) {
-        return new BlockStateParticleEffect(ParticleTypes.BLOCK, Blocks.AIR.getDefaultState());
+    @Override
+    public void onApplied(LivingEntity entity, int amplifier) {
+        entity.playSound(SoundEvents.BLOCK_CHAIN_FALL);
+
+        super.onApplied(entity, amplifier);
     }
 }

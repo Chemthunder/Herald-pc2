@@ -13,6 +13,12 @@
   "death.attack.resonant_kill.player": "%1$s was eradicated by %2$s",
   "death.attack.resonant_kill": "%1$s was eradicated",
 
+  "death.attack.oath_kill.player": "%1$s was set free from their mortal body",
+  "death.attack.oath_kill": "%1$s was set free from their mortal body",
+
+  "death.attack.solace_kill.player": "%1$s gave their soul to a greater cause",
+  "death.attack.solace_kill": "%1$s gave their soul to a greater cause",
+
   "item.herald.strung_blade": "Strung Blade",
 
   "itemGroup.herald": "Herald",
@@ -24,5 +30,13 @@
 
   "effect.herald.strained": "Strained",
 
-  "item.herald.ragnarok": "Ragnarok"
+  "item.herald.ragnarok": "Ragnarok",
+
+  "item.herald.cursed_mask": "Cursed Mask",
+
+  "item.herald.pitied_mask": "Pitied Mask",
+
+  "item.herald.mourners_oath": "Mourner's Oath",
+
+  "item.herald.solace": "Solace"
 }

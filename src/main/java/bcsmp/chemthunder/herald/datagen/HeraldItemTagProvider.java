@@ -23,7 +23,9 @@ public class HeraldItemTagProvider extends FabricTagProvider<Item> {
 
     public static final TagKey<Item> NAIL_ITEMS = TagKey.of(RegistryKeys.ITEM, Identifier.of(Herald.MOD_ID, "nail_items"));
 
-    public static final TagKey<Item> STRUNG_BLADE_ITEMS = TagKey.of(RegistryKeys.ITEM, Identifier.of(Herald.MOD_ID, "strung_items"));
+    public static final TagKey<Item> DIVINE_ITEMS = TagKey.of(RegistryKeys.ITEM, Identifier.of(Herald.MOD_ID, "divine_items"));
+
+
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
@@ -40,8 +42,8 @@ public class HeraldItemTagProvider extends FabricTagProvider<Item> {
                 .add(Items.BLAZE_ROD)
                 .setReplace(true);
 
-        getOrCreateTagBuilder(STRUNG_BLADE_ITEMS)
-                .add(Items.CHAIN)
+        getOrCreateTagBuilder(DIVINE_ITEMS)
+                .add(Items.QUARTZ)
                 .setReplace(true);
     }
 }

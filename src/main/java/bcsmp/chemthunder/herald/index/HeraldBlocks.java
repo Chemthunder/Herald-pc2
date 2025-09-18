@@ -14,7 +14,6 @@ import net.minecraft.registry.Registry;
 import java.util.function.Function;
 
 public interface HeraldBlocks {
-
     Block SACRED_EFFIGY = createWithItem("sacred_effigy", SacredEffigyBlock::new, AbstractBlock.Settings.copy(Blocks.QUARTZ_BLOCK)
     );
 
@@ -32,11 +31,11 @@ public interface HeraldBlocks {
 
     static Block createWithItem(String name, Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings settings) {
         Block block = create(name, factory, settings);
-        HeraldItems.create(name, itemSettings -> new TranslationBlockItem(block, itemSettings), new Item.Settings());
+        HeraldItems.create(name, itemSettings -> new TranslationBlockItem(block, itemSettings), new Item.Settings().maxCount(1));
         return block;
     }
 
     static void init() {
-        //
+
     }
 }

@@ -17,11 +17,12 @@ public interface HeraldToolMaterial {
 
     ToolMaterial RESO = create(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 99999999, 5, 0, 0, HeraldItemTagProvider.NAIL_ITEMS);
 
-    ToolMaterial STRUNG = create(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 3050, 2, 0, 50, HeraldItemTagProvider.STRUNG_BLADE_ITEMS);
+    ToolMaterial DIVINE_POINT_FIVE = create(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 999999999, 5, 0.5f, 50, HeraldItemTagProvider.DIVINE_ITEMS);
+
+    ToolMaterial DIVINE = create(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 999999999, 5, 0f, 50, HeraldItemTagProvider.DIVINE_ITEMS);
+
 
     private static ToolMaterial create(TagKey<Block> incorrectBlocksForDrops, int durability, float miningSpeed, float attackDamageBonus, int enchantmentValue, TagKey<Item> repairItems) {
-
-
 
         return new ToolMaterial() {
             @Override

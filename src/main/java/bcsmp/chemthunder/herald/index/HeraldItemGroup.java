@@ -15,7 +15,7 @@ import net.minecraft.text.Text;
 public interface HeraldItemGroup {
     RegistryKey<ItemGroup> HERALD_GROUP_KEY = RegistryKey.of(RegistryKeys.ITEM_GROUP, Herald.id("herald"));
     ItemGroup ITEM_GROUP = FabricItemGroup.builder()
-            .icon(() -> new ItemStack(HeraldItems.SOLITUDE))
+            .icon(() -> new ItemStack(HeraldItems.COVENANT))
             .displayName(Text.translatable("itemGroup.herald").styled(style -> style.withColor(0x08080a)))
             .build();
 
@@ -28,9 +28,12 @@ public interface HeraldItemGroup {
 
     private static void addEntries(FabricItemGroupEntries itemGroup) {
         itemGroup.add(HeraldItems.MOURNERS_OATH);
+        itemGroup.add(HeraldItems.SOLACE);
         itemGroup.add(HeraldItems.COVENANT);
         itemGroup.add(HeraldBlocks.SACRED_EFFIGY);
         itemGroup.add(HeraldBlocks.FORSAKEN_EFFIGY);
         itemGroup.add(HeraldItems.RAGNAROK);
+        itemGroup.add(HeraldItems.PITIED_MASK);
+        itemGroup.add(HeraldItems.CURSED_MASK);
     }
 }

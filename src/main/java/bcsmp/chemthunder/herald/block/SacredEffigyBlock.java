@@ -2,6 +2,7 @@ package bcsmp.chemthunder.herald.block;
 
 import bcsmp.chemthunder.herald.Herald;
 import bcsmp.chemthunder.herald.index.HeraldEffects;
+import bcsmp.chemthunder.herald.index.HeraldItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.FlowerBlock;
@@ -15,6 +16,7 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.text.MutableText;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.random.Random;
@@ -58,7 +60,7 @@ public class SacredEffigyBlock extends Block {
                 world.setBlockState(abovePos, state);
             }
         }
-placer.playSound(SoundEvents.ENTITY_WITHER_SPAWN, 1, 1);
+        placer.playSound(SoundEvents.ENTITY_WITHER_SPAWN, 1, 1);
         super.onPlaced(world, pos, state, placer, itemStack);
     }
 
@@ -73,14 +75,16 @@ placer.playSound(SoundEvents.ENTITY_WITHER_SPAWN, 1, 1);
     @Override
     public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
 
-        Box area = new Box(pos).expand(5);
+        Box area = new Box(pos).expand(45);
         List<LivingEntity> entities = world.getEntitiesByClass(
                 LivingEntity.class, area,
                 entity -> true
         );
 
         for (LivingEntity entity : entities) {
-            entity.addStatusEffect(new StatusEffectInstance(HeraldEffects.STRAINED, 60));
+            if (!entity.getOffHandStack().isOf(HeraldItems.COVENANT)) {
+                entity.addStatusEffect(new StatusEffectInstance(HeraldEffects.STRAINED, 60));
+            }
         }
 
         world.scheduleBlockTick(pos, this, 20); // 1 second later

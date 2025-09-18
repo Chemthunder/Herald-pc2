@@ -1,10 +1,13 @@
 package bcsmp.chemthunder.herald.block;
 
 import bcsmp.chemthunder.herald.Herald;
+import bcsmp.chemthunder.herald.index.HeraldEffects;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -15,8 +18,11 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Box;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class ForsakenEffigyBlock extends Block {
     public ForsakenEffigyBlock(Settings settings) {
@@ -28,7 +34,17 @@ public class ForsakenEffigyBlock extends Block {
             serverWorld.spawnParticles(ParticleTypes.SOUL, pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5, 50, 0.1, 1, 0.1, 0.2);
         }
         if (placer instanceof ServerPlayerEntity serverPlayerEntity) {
-            teleportToPurgatory(serverPlayerEntity);
+            Box area = new Box(pos).expand(5);
+            List<LivingEntity> entities = world.getEntitiesByClass(
+                    LivingEntity.class, area,
+                    entity -> true
+            );
+
+            for (LivingEntity entity : entities) {
+                if (!entity.getOffHandStack().isOf(Items.ACACIA_FENCE)) {
+                    teleportToPurgatory(serverPlayerEntity);
+                }
+            }
         }
         super.onPlaced(world, pos, state, placer, itemStack);
     }
