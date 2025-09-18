@@ -1,0 +1,18 @@
+{
+  "type": "herald:wood_type",
+  "generator": {
+    "type": "minecraft:flat",
+    "settings": {
+      "biome": "herald:woods",
+      "lakes": true,
+      "features": true,
+      "layers": [
+        {
+          "height": 100,
+          "block": "minecraft:black_concrete"
+        }
+      ],
+      "structure_overrides": []
+    }
+  }
+}

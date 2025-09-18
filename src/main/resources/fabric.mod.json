@@ -3,16 +3,17 @@
   "id": "herald",
   "version": "${version}",
   "name": "Herald",
-  "description": "silly divinity weaponry shit",
+  "description": "",
   "authors": [
-    "Chemthunder: (Developer)"
+    "Chemthunder: (Developer)",
+    "The Old Faith"
   ],
   "contributors": [
     "ArcCM",
     "DexFlexYT",
     "Homak"
   ],
-  "license": "CC0-1.0",
+  "license": "Chemthunder License",
   "icon": "assets/herald/icon.png",
   "environment": "*",
   "entrypoints": {

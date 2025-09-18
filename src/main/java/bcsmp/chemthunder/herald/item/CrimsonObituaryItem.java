@@ -63,4 +63,15 @@ playerEntity.playSound(SoundEvents.BLOCK_CHAIN_HIT, 19, 1);
     public MutableText getDescription() {
         return Text.translatable(this.getTranslationKey() + ".desc");
     }
+
+
+    @Override
+    public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        target.setVelocity(attacker.getRotationVec(0)
+                .multiply(-1)
+        );
+
+        target.velocityModified = true;
+        return super.postHit(stack, target, attacker);
+    }
 }

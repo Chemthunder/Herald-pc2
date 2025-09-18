@@ -13,22 +13,24 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.text.Text;
 
 public interface HeraldItemGroup {
-    RegistryKey<ItemGroup> GROUP_KEY = RegistryKey.of(RegistryKeys.ITEM_GROUP, Herald.id("herald"));
+    RegistryKey<ItemGroup> HERALD_GROUP_KEY = RegistryKey.of(RegistryKeys.ITEM_GROUP, Herald.id("herald"));
     ItemGroup ITEM_GROUP = FabricItemGroup.builder()
             .icon(() -> new ItemStack(HeraldItems.SOLITUDE))
             .displayName(Text.translatable("itemGroup.herald").styled(style -> style.withColor(0x08080a)))
             .build();
 
-    static void init() {
-        Registry.register(Registries.ITEM_GROUP, GROUP_KEY, ITEM_GROUP);
 
-        ItemGroupEvents.modifyEntriesEvent(GROUP_KEY).register(HeraldItemGroup::addEntries);
+    static void init() {
+        Registry.register(Registries.ITEM_GROUP, HERALD_GROUP_KEY, ITEM_GROUP);
+
+        ItemGroupEvents.modifyEntriesEvent(HERALD_GROUP_KEY).register(HeraldItemGroup::addEntries);
     }
 
     private static void addEntries(FabricItemGroupEntries itemGroup) {
-    itemGroup.add(HeraldItems.SOLITUDE);
-    itemGroup.add(HeraldItems.CRIMSON_OBITUARY);
-    itemGroup.add(HeraldItems.RESONANT_NAIL);
-    itemGroup.add(HeraldItems.STRUNG_BLADE);
+        itemGroup.add(HeraldItems.MOURNERS_OATH);
+        itemGroup.add(HeraldItems.COVENANT);
+        itemGroup.add(HeraldBlocks.SACRED_EFFIGY);
+        itemGroup.add(HeraldBlocks.FORSAKEN_EFFIGY);
+        itemGroup.add(HeraldItems.RAGNAROK);
     }
 }

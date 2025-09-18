@@ -8,13 +8,9 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 
 public interface HeraldDamageSources {
-    RegistryKey<DamageType> GRACE_KILL = of("grace_kill");
     RegistryKey<DamageType> SOLITUDE_KILL = of("solitude_kill");
     RegistryKey<DamageType> CRIMSON_KILL = of("crimson_kill");
     RegistryKey<DamageType> RESONANT_KILL = of("resonant_kill");
-
-    static DamageSource grace_kill(LivingEntity entity) {
-        return entity.getDamageSources().create(GRACE_KILL); }
 
     static DamageSource solitude_kill(LivingEntity entity) {
         return entity.getDamageSources().create(SOLITUDE_KILL); }

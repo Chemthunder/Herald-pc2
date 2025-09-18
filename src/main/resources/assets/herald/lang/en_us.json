@@ -1,8 +1,4 @@
 {
-  "item.herald.grace": "Grace",
-  "death.attack.grace_kill.player": "%1$s beheld the sight of god",
-  "death.attack.grace_kill": "%1$s saw the light",
-
   "item.herald.solitude": "Solitude",
   "item.herald.solitude.desc": "Lonely no longer.",
   "death.attack.solitude_kill.player": "%1$s was liberated by %2$s",
@@ -22,5 +18,11 @@
   "itemGroup.herald": "Herald",
   "text.grace.change_weather": "A joyous melody surrounds you",
   "text.grace.change_weather.fail": "fail",
-  "herald.subtitles.event.storm_ring": "The storm rings."
+  "herald.subtitles.event.storm_ring": "The storm rings.",
+
+  "block.herald.sacred_effigy": "Sacred Effigy",
+
+  "effect.herald.strained": "Strained",
+
+  "item.herald.ragnarok": "Ragnarok"
 }

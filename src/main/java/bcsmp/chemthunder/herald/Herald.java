@@ -1,8 +1,6 @@
 package bcsmp.chemthunder.herald;
 
-import bcsmp.chemthunder.herald.index.HeraldItemGroup;
-import bcsmp.chemthunder.herald.index.HeraldItems;
-import bcsmp.chemthunder.herald.index.HeraldSoundEvents;
+import bcsmp.chemthunder.herald.index.*;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
@@ -22,6 +20,7 @@ public class Herald implements ModInitializer {
         HeraldItems.init();
         HeraldItemGroup.init();
         HeraldSoundEvents.init();
-
+        HeraldBlocks.init();
+        HeraldEffects.init();
 	}
 }
