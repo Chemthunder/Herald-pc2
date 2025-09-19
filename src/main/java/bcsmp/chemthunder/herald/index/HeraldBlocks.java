@@ -10,6 +10,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.util.Rarity;
 
 import java.util.function.Function;
 
@@ -31,11 +32,10 @@ public interface HeraldBlocks {
 
     static Block createWithItem(String name, Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings settings) {
         Block block = create(name, factory, settings);
-        HeraldItems.create(name, itemSettings -> new TranslationBlockItem(block, itemSettings), new Item.Settings().maxCount(1));
+        HeraldItems.create(name, itemSettings -> new TranslationBlockItem(block, itemSettings), new Item.Settings().maxCount(1).rarity(Rarity.UNCOMMON));
         return block;
     }
 
     static void init() {
-
     }
 }

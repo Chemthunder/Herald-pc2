@@ -13,6 +13,7 @@ public interface HeraldDamageSources {
     RegistryKey<DamageType> RESONANT_KILL = of("resonant_kill");
     RegistryKey<DamageType> SOLACE_KILL = of("solace_kill");
     RegistryKey<DamageType> OATH_KILL = of("oath_kill");
+    RegistryKey<DamageType> CONTRACT = of("contract");
 
     static DamageSource solitude_kill(LivingEntity entity) {
         return entity.getDamageSources().create(SOLITUDE_KILL); }
@@ -28,6 +29,9 @@ public interface HeraldDamageSources {
 
     static DamageSource oath_kill(LivingEntity entity) {
         return entity.getDamageSources().create(OATH_KILL); }
+
+    static DamageSource contract(LivingEntity entity) {
+        return entity.getDamageSources().create(CONTRACT); }
 
 
     private static RegistryKey<DamageType> of(String name) {

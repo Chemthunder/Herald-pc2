@@ -84,6 +84,11 @@ public interface HeraldItems {
             .maxCount(1)
     ));
 
+    Item SIGNED_COVENANT = create("signed_covenant", new Item(new AcornItemSettings()
+            .maxCount(1)
+            .rarity(Rarity.UNCOMMON)
+    ));
+
     //  Item MACHINE_OIL_BOTTLE = create("machine_oil_bottle", new OilItem(new Item.Settings()
     //         .maxCount(16)
     //  ));
@@ -94,7 +99,6 @@ public interface HeraldItems {
         modifyItemNameColor(SOLITUDE, 0x1c1c21);
         modifyItemNameColor(CRIMSON_OBITUARY, 0x801b50);
         modifyItemNameColor(RESONANT_NAIL, 0x805437);
-
 
         modifyItemNameColor(CURSED_MASK, 0x9e1830);
 

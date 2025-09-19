@@ -22,8 +22,7 @@
   "item.herald.strung_blade": "Strung Blade",
 
   "itemGroup.herald": "Herald",
-  "text.grace.change_weather": "A joyous melody surrounds you",
-  "text.grace.change_weather.fail": "fail",
+
   "herald.subtitles.event.storm_ring": "The storm rings.",
 
   "block.herald.sacred_effigy": "Sacred Effigy",
@@ -38,5 +37,11 @@
 
   "item.herald.mourners_oath": "Mourner's Oath",
 
-  "item.herald.solace": "Solace"
+  "item.herald.solace": "Solace",
+
+  "item.herald.covenant": "Covenant",
+  "item.herald.signed_covenant": "Signed Covenant",
+
+  "death.attack.contract": "%1$s signed away their soul",
+  "death.attack.contract.player": "%1$s signed away their soul whilst fighting %2$s"
 }
