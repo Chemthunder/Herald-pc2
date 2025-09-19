@@ -3,7 +3,6 @@ package bcsmp.chemthunder.herald.index;
 import bcsmp.chemthunder.herald.Herald;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
-import net.minecraft.item.ArmorMaterials;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.registry.Registries;
@@ -31,6 +30,25 @@ public class HeraldArmorMaterials {
             0,
             // The sound played when the armor is equipped.
             SoundEvents.ITEM_ARMOR_EQUIP_IRON,
+            // The ingredient(s) used to repair the armor.
+            () -> Ingredient.ofItems(Items.AIR),
+            0.0F,
+            0.0F,
+            // Guidite is NOT dyeable, so we will pass false.
+            false);
+
+    public static final RegistryEntry<ArmorMaterial> PITIED = registerMaterial("pitied",
+            // Defense (protection) point values for each armor piece.
+            Map.of(
+                    ArmorItem.Type.HELMET, 3,
+                    ArmorItem.Type.CHESTPLATE, 8,
+                    ArmorItem.Type.LEGGINGS, 6,
+                    ArmorItem.Type.BOOTS, 3
+            ),
+            // Enchantability. For reference, leather has 15, iron has 9, and diamond has 10.
+            0,
+            // The sound played when the armor is equipped.
+            SoundEvents.ITEM_ARMOR_EQUIP_GENERIC,
             // The ingredient(s) used to repair the armor.
             () -> Ingredient.ofItems(Items.AIR),
             0.0F,

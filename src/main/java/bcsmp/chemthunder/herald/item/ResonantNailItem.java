@@ -3,7 +3,6 @@ package bcsmp.chemthunder.herald.item;
 import bcsmp.chemthunder.herald.index.HeraldDamageSources;
 import net.acoyt.acornlib.api.item.CustomHitParticleItem;
 import net.acoyt.acornlib.api.item.CustomKillSourceItem;
-import net.acoyt.acornlib.api.item.KillEffectItem;
 import net.acoyt.acornlib.impl.client.particle.SweepParticleEffect;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;

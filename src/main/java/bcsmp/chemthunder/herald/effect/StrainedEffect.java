@@ -1,7 +1,5 @@
 package bcsmp.chemthunder.herald.effect;
 
-import bcsmp.chemthunder.herald.index.HeraldEffects;
-import bcsmp.chemthunder.herald.index.HeraldItems;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.LivingEntity;

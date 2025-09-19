@@ -15,7 +15,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.world.World;
 
-import javax.swing.*;
 import java.util.List;
 
 public class RagnarokItem extends Item {

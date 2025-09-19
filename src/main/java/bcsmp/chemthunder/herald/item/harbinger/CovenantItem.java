@@ -3,8 +3,6 @@ package bcsmp.chemthunder.herald.item.harbinger;
 import bcsmp.chemthunder.herald.index.HeraldDamageSources;
 import bcsmp.chemthunder.herald.index.HeraldItems;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.damage.DamageSources;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

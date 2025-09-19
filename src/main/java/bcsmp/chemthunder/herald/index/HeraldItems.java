@@ -5,12 +5,9 @@ import bcsmp.chemthunder.herald.item.CrimsonObituaryItem;
 import bcsmp.chemthunder.herald.item.ResonantNailItem;
 import bcsmp.chemthunder.herald.item.SolitudeItem;
 import bcsmp.chemthunder.herald.item.harbinger.*;
+import bcsmp.chemthunder.herald.item.harbinger.sigil.SigilOfTheMartyrItem;
 import net.acoyt.acornlib.api.item.AcornItemSettings;
-import net.fabricmc.fabric.api.item.v1.EquipmentSlotProvider;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.component.DataComponentTypes;
-import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -75,7 +72,7 @@ public interface HeraldItems {
             .maxCount(1)
     ));
 
-    Item PITIED_MASK = create("pitied_mask", new PitiedMaskItem(ArmorMaterials.NETHERITE, ArmorItem.Type.HELMET, new Item.Settings()
+    Item PITIED_MASK = create("pitied_mask", new PitiedMaskItem(HeraldArmorMaterials.PITIED, ArmorItem.Type.HELMET, new Item.Settings()
             .maxCount(1)
             .rarity(Rarity.UNCOMMON)
     ));
@@ -85,6 +82,13 @@ public interface HeraldItems {
     ));
 
     Item SIGNED_COVENANT = create("signed_covenant", new Item(new AcornItemSettings()
+            .maxCount(1)
+            .rarity(Rarity.UNCOMMON)
+    ));
+
+    Item SIGIL_OF_THE_MARTYR = create("sigil_of_the_martyr", new SigilOfTheMartyrItem(new AcornItemSettings()
+
+
             .maxCount(1)
             .rarity(Rarity.UNCOMMON)
     ));
